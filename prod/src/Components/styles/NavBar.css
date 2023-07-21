@@ -1,0 +1,33 @@
+.navbar {
+  width: 100vw;
+  padding: 30px 20px;
+  height: 30px;
+  font-size: 18px;
+}
+
+.logo {
+  position: absolute;
+  margin-left: 70px;
+  font-weight: 600;
+}
+
+.contents {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.navbar--content {
+  cursor: pointer;
+  padding: 0px 30px;
+}
+
+.theme {
+  position: absolute;
+  right: 100px;
+  display: flex;
+}
+
+.themesvg {
+  width: 35px;
+}

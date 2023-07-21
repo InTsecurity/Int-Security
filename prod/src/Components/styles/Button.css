@@ -1,0 +1,30 @@
+.main--btn {
+  padding: 12px 30px;
+  background-color: black;
+  color: white;
+  border: 0px;
+  font-size: 18px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
+  border-radius: 30px;
+  padding-right: 60px;
+  margin: 30px 0;
+}
+
+.main--btn::after {
+  display: inline-block;
+  content: url("./../../assets/arrow.png");
+  width: 50px;
+  height: 50px;
+  background-color: #efefef;
+  position: absolute;
+  border-radius: 50%;
+  margin: -13px 12px;
+  transition: 0.5s;
+  scale: 0.2;
+}
+
+.main--btn:hover::after {
+  scale: 0.7;
+  rotate: -30deg;
+}
