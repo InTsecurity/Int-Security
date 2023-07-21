@@ -1,0 +1,41 @@
+.hero {
+  padding: 90px 110px;
+}
+
+.title {
+  font-size: 250px;
+  display: flex;
+}
+
+.title--works--content {
+  margin-left: 30px;
+  margin-top: 105px;
+}
+
+.title--works {
+  font-size: 20px;
+  position: relative;
+}
+
+.title--works::before {
+  width: 8px;
+  height: 8px;
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: black;
+  border-radius: 50%;
+  top: 8px;
+  left: -17px;
+}
+
+.reduce--tm {
+  margin-top: -80px;
+}
+
+.title--details {
+  font-size: 20px;
+  width: 460px;
+  margin-top: 70px;
+  margin-left: 10px;
+}
