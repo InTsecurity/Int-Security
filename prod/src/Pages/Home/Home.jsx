@@ -1,7 +1,8 @@
-import About from "./Components/About";
-import Faq from "./Components/Faq";
-import HeroSection from "./Components/HeroSection";
-import Services from "./Components/Services";
+import OurWorks from '../../Components/OurWorks';
+import About from './Components/About';
+import Faq from './Components/Faq';
+import HeroSection from './Components/HeroSection';
+import Services from './Components/Services';
 
 function Home() {
   return (
@@ -9,6 +10,7 @@ function Home() {
       <HeroSection />
       <About />
       <Services />
+      <OurWorks />
       <Faq />
     </div>
   );

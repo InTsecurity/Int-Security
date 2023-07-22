@@ -6,6 +6,7 @@
   width: 380px;
   margin: 30px 0px;
   transition: 0.4s;
+  cursor: pointer;
 }
 
 .cards:hover {
