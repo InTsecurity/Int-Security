@@ -1,0 +1,69 @@
+.footer {
+  text-align: center;
+  font-size: 23px;
+  padding: 20px 10px;
+  border-top: solid 2px black;
+  padding-top: 50px;
+}
+
+.footer svg {
+  filter: invert(1);
+}
+
+.footer--logo--main {
+  height: 60px;
+  filter: invert(1);
+}
+
+.footer--contents {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  margin: 40px auto;
+}
+
+.footer--hr {
+  margin: 20px auto;
+  opacity: 0.4;
+  width: 40%;
+}
+
+.footer--socials {
+  display: flex;
+  width: 30%;
+  justify-content: space-evenly;
+  margin: 25px auto;
+}
+
+.github {
+  margin-top: 8px;
+  padding: 0px 10px;
+}
+.instagram {
+  margin-left: -5px;
+}
+
+.footer--copyright {
+  padding: 20px;
+  color: #000000;
+}
+
+.website--version {
+  position: absolute;
+  right: 20px;
+  margin-bottom: 20px;
+  opacity: 0.6;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.socials {
+  cursor: pointer;
+  transition: 1s;
+}
+
+.socials:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  rotate: 360deg;
+  border-radius: 10px;
+}
