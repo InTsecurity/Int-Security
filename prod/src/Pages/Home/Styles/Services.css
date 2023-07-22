@@ -1,0 +1,18 @@
+.services {
+  margin: 70px 0px;
+  padding: 0px 120px;
+}
+
+.services--title {
+  margin: 50px 0px;
+  font-size: 52px;
+  font-weight: 600;
+}
+
+.service--cards {
+  padding: 0px 80px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;
+  margin: 80px 0px;
+}

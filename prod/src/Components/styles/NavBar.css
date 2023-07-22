@@ -2,16 +2,18 @@
   width: 100vw;
   padding: 30px 20px;
   height: 30px;
-  font-size: 18px;
+  font-size: 23px;
 }
 
 .logo {
   position: absolute;
   margin-left: 70px;
   font-weight: 600;
+  font-size: 26px;
 }
 
 .contents {
+  color: black;
   display: flex;
   margin: 0 auto;
   width: fit-content;

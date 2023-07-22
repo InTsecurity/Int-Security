@@ -1,0 +1,44 @@
+.question {
+  margin: 30px 60px;
+  width: 90%;
+  padding: 10px;
+  font-size: 28px;
+}
+
+.question--title {
+  margin-left: 20px;
+  width: 90%;
+}
+
+.question--wrapper {
+  display: flex;
+  cursor: pointer;
+}
+
+.show--answer {
+  margin-top: -10px;
+  font-size: 50px;
+  transition: 0.4s;
+}
+
+.answer {
+  margin: 20px 30px;
+  font-size: 12px;
+  overflow: hidden;
+  opacity: 0;
+  transition: font-size 150ms 200ms ease-in, opacity 100ms 200ms ease-in;
+}
+
+.display--answered {
+  height: auto;
+  font-size: 24px;
+  opacity: 1;
+}
+
+.show--answered {
+  rotate: 45deg;
+}
+
+.split--questions {
+  opacity: 0.4;
+}
