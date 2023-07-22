@@ -16,8 +16,6 @@ function OurWorks() {
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: '5rem',
-    color: 'white',
-    background: 'black',
   };
 
   return (
