@@ -1,0 +1,163 @@
+.contactus {
+  padding: 130px 0px;
+}
+.contactus--form {
+  margin: 0px auto;
+  font-size: 25px;
+  padding-bottom: 80px;
+  width: 60%;
+  background-color: #ffffff;
+  border: 0px;
+  color: #2a2a2a;
+  height: fit-content;
+  overflow: hidden;
+}
+
+.contactus--form::before {
+  background-image: linear-gradient(#2a2a2a, #2b2b2b, #2d2d2d);
+}
+.contactus--form::after {
+  display: none;
+}
+
+.contactus--content {
+  padding: 90px;
+  padding-bottom: 20px;
+  transition: 0.5s;
+}
+
+.contactus--head {
+  font-size: 62px;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+}
+
+.cus--name {
+  padding-top: 30px;
+  width: 100%;
+  font-size: 24px;
+}
+
+.cus--fname {
+  display: inline-block;
+  padding-right: 70px;
+  padding-top: 40px;
+}
+
+.country {
+  margin-top: 45px;
+}
+
+.fname {
+  border: solid 0px #2a2a2a;
+  height: 40px;
+  width: 370px;
+  border-bottom: solid 3px rgb(0, 0, 0);
+  margin-top: 12px;
+  transition: 0.3;
+  font-size: 20px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.cus--quote {
+  padding: 10px 0px;
+  width: 70%;
+  font-size: 14px;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  z-index: 10;
+  position: relative;
+}
+
+.next--details {
+  padding: 0px 0px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+.service {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.serviceSelect {
+  width: 83%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: white;
+  font-size: 20px;
+  border: solid 2px rgb(0, 0, 0);
+}
+
+.moreInformation {
+  width: 83%;
+}
+
+.submitbtn {
+  width: 180px;
+  padding: 10px 0px;
+  margin-top: 55px;
+  height: 50px;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  color: white;
+  border-radius: 4px;
+  transition: 0.5s ease-in-out;
+  font-weight: 600;
+  font-size: 22px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
+  cursor: pointer;
+}
+
+.success--img {
+  width: 60px;
+  height: 60px;
+  margin: 0px auto;
+}
+
+.submitbtn:hover {
+  background-color: #3d3d3d;
+}
+
+.success {
+  margin-top: 70px;
+}
+
+.checkmark {
+  stroke: green;
+  stroke-dashoffset: 745.74853515625;
+  stroke-dasharray: 745.74853515625;
+  animation: dash 2s ease-out forwards infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 745.74853515625;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.success--title {
+  width: 70%;
+  margin: 50px auto;
+  text-align: center;
+}
