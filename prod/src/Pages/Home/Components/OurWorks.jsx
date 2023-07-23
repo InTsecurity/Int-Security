@@ -1,28 +1,28 @@
-import React from 'react';
-import './styles/OurWorks.css';
+import React from "react";
+import "./../Styles/OurWorks.css";
 
 //Swiper modules
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper";
 
 //Swiper css
-import 'swiper/swiper.min.css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/swiper.min.css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 function OurWorks() {
   const styles = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontSize: '5rem',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: "5rem",
   };
 
   return (
     <>
       <Swiper
         style={{
-          marginTop: '11vh',
+          marginTop: "11vh",
         }}
         modules={[Navigation, Pagination, Autoplay]}
         pagination={{
