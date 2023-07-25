@@ -15,7 +15,9 @@ function Faq() {
           value your feedback and are excited to be your digital partner. Reach
           out to us today and let's start building your online success
           together!"
-          <Button title="Countact Us" link="/ContactUs" />
+          <div className="faq--btn">
+            <Button title="Countact Us" link="/ContactUs" />
+          </div>
         </div>
       </div>
       <div className="questions">

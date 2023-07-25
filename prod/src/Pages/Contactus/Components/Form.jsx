@@ -55,6 +55,7 @@ function ContactUsForm(props) {
         if (!isSubmitted) {
           //   SubmitDetails(Details, setisSubmitted, props.setsuccess);
           // Submit form
+
           setisSubmitted(true);
         }
       }}
