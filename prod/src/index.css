@@ -4,9 +4,15 @@
   margin: 0;
 }
 
+.root {
+  overflow: auto;
+}
+
 body {
   background: #efefef;
   font-family: "Roboto Condensed", sans-serif;
   font-family: "Space Grotesk", sans-serif;
-  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
 }
