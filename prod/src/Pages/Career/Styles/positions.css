@@ -13,7 +13,6 @@
   font-size: 22px;
   text-align: left;
   margin: 10px auto;
-  border-bottom: 2px solid rgb(135, 135, 135);
 }
 
 .pos--element {
@@ -24,4 +23,20 @@
 
 .pos--apply {
   margin-top: -5px;
+}
+
+.more--info {
+  /* height: 0px; */
+  opacity: 0;
+  font-size: 2px;
+  width: 60%;
+  margin: 10px auto;
+  overflow: hidden;
+  transition: font-size 300ms 200ms ease-in, opacity 100ms 200ms ease-in;
+}
+
+.more--info--display {
+  /* height: auto; */
+  opacity: 1;
+  font-size: 22px;
 }

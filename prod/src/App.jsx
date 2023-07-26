@@ -5,8 +5,25 @@ import "./index.css";
 import Footer from "./Components/Footer";
 import Contactus from "./Pages/Contactus/Contactus";
 import Career from "./Pages/Career/Career";
+import Scrollbar from "smooth-scrollbar";
+import OverscrollPlugin from "smooth-scrollbar/plugins/overscroll";
 
 function App() {
+  const overscrollPluginOptions = {
+    enable: true,
+    effect: "bounce",
+    damping: 0.15,
+    maxOverscroll: 150,
+    glowColor: "#fff",
+  };
+  Scrollbar.use(OverscrollPlugin);
+  const scrollbar = Scrollbar.init(document.body, {
+    damping: 0.07,
+    plugins: {
+      overscroll: { ...overscrollPluginOptions },
+    },
+  });
+  Scrollbar.initAll();
   return (
     <div className="app">
       <NavBar />

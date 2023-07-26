@@ -1,0 +1,79 @@
+.applyform {
+  display: flex;
+  margin: 90px 120px;
+  flex-wrap: wrap;
+}
+
+.more--details {
+  width: 90%;
+}
+
+.af--title--main {
+  padding: 100px 0px;
+  width: 40%;
+}
+
+.apply--form {
+  width: 45%;
+  border: solid 2px black;
+  border-radius: 20px;
+  margin: 80px auto;
+  padding: 40px;
+}
+
+.af--title {
+  font-size: 36px;
+}
+.apply--form label {
+  font-size: 22px;
+}
+
+.apply--form form {
+  margin: 40px 20px;
+}
+
+.single--level {
+  display: flex;
+}
+
+.af--name {
+  background-color: #efefef;
+  border: 0px;
+  border-bottom: solid 2px black;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px 5px;
+  width: 14em;
+}
+
+.block {
+  display: block;
+}
+
+.block2 {
+  margin-left: 40px;
+}
+
+.block3 {
+  margin: 30px 0px;
+}
+
+.af--email {
+  width: 88%;
+}
+
+.af--inputBox {
+  width: 73%;
+}
+
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.mt60 {
+  margin-top: 60px;
+}
