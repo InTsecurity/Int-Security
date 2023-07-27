@@ -8,7 +8,7 @@ function NavBar() {
         <div className="theme">{<LightThemeSVG />}</div>
         <div className="contents">
           <div className="navbar--content home">About Us</div>
-          <div className="navbar--content pricing">Pricing</div>
+          <div className="navbar--content pricing">Services</div>
           <div className="navbar--content career">Careers</div>
           <div className="navbar--content contact">Contact Us</div>
         </div>

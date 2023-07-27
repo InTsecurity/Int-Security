@@ -17,6 +17,7 @@
 
 .footer--contents {
   display: flex;
+  overflow: hidden;
   justify-content: space-evenly;
   width: 40%;
   margin: 40px auto;
@@ -33,6 +34,8 @@
   width: 30%;
   justify-content: space-evenly;
   margin: 25px auto;
+  overflow: hidden;
+  padding: 15px 0px;
 }
 
 .github {

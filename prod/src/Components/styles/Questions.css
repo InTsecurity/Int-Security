@@ -3,6 +3,7 @@
   width: 90%;
   padding: 10px;
   font-size: 28px;
+  overflow: hidden;
 }
 
 .question--title {
@@ -13,6 +14,7 @@
 .question--wrapper {
   display: flex;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .show--answer {

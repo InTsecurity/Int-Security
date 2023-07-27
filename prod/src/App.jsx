@@ -7,6 +7,7 @@ import Contactus from "./Pages/Contactus/Contactus";
 import Career from "./Pages/Career/Career";
 import Scrollbar from "smooth-scrollbar";
 import OverscrollPlugin from "smooth-scrollbar/plugins/overscroll";
+import Services from "./Pages/Services/Services";
 
 function App() {
   const overscrollPluginOptions = {
@@ -17,7 +18,7 @@ function App() {
     glowColor: "#fff",
   };
   Scrollbar.use(OverscrollPlugin);
-  const scrollbar = Scrollbar.init(document.body, {
+  Scrollbar.init(document.body, {
     damping: 0.07,
     plugins: {
       overscroll: { ...overscrollPluginOptions },
@@ -30,9 +31,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          {/* <Route path="/pricing" element={<Pricing />}></Route> */}
+          <Route path="/services" element={<Services />}></Route>
           <Route path="contactUs" element={<Contactus />}></Route>
-          <Route path="career" element={<Career />}></Route>
+          <Route path="careers" element={<Career />}></Route>
         </Routes>
       </BrowserRouter>
       <Footer />
