@@ -1,0 +1,43 @@
+.category {
+  margin: 40px 180px;
+  font-size: 28px;
+  width: 80%;
+  padding-bottom: 40px;
+  border-bottom: solid 2px rgb(151, 151, 151);
+}
+
+.category--title {
+  font-weight: 600;
+  padding: 10px 30px;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.ct--title {
+  width: 98%;
+}
+
+.checkbox {
+  background-color: black;
+  border-radius: 50%;
+  z-index: 4;
+  padding: 0px 8px;
+  filter: invert(1);
+  scale: 0.9;
+}
+
+.product {
+  display: flex;
+  padding: 10px 30px;
+}
+
+.product--dis {
+  font-size: 21px;
+  padding-left: 20px;
+}
+
+.checkout {
+  display: flex;
+  justify-content: center;
+  margin: 80px;
+}

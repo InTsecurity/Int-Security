@@ -13,7 +13,7 @@ function Footer() {
         ></img>
         <div className="footer--contents">
           <div className="navbar--details">About</div>
-          <div className="navbar--details">Pricing</div>
+          <div className="navbar--details">Services</div>
           <div className="navbar--details">Careers</div>
           <div className="navbar--details">Contact us</div>
         </div>

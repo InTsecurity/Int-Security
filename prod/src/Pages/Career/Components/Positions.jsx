@@ -12,7 +12,7 @@ function Positions() {
             location="Location"
             type="Type"
             dis="none"
-            apply={"Apply"}
+            apply={"More details"}
           />
         </div>
         <NewPosition
@@ -20,21 +20,21 @@ function Positions() {
           title="Full-Stack Developer"
           location="Remote"
           type="Part-Time"
-          apply={<Button title="Apply" />}
+          apply={<Button title="More details" />}
         />
         <NewPosition
           id="2"
           title="Full-Stack Developer"
           location="Remote"
           type="Part-Time"
-          apply={<Button title="Apply" />}
+          apply={<Button title="More details" />}
         />
         <NewPosition
           id="3"
           title="Full-Stack Developer"
           location="Remote"
           type="Part-Time"
-          apply={<Button title="Apply" />}
+          apply={<Button title="More details" />}
         />
       </div>
     </div>
