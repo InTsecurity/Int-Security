@@ -1,16 +1,49 @@
 import "./styles/NavBar.css";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const navigate = useNavigate();
+  function HandleClick(route) {
+    navigate(route);
+  }
   return (
     <div>
       <div className="navbar">
         <div className="logo">InTSecurity</div>
         <div className="theme">{<LightThemeSVG />}</div>
         <div className="contents">
-          <div className="navbar--content home">About Us</div>
-          <div className="navbar--content pricing">Services</div>
-          <div className="navbar--content career">Careers</div>
-          <div className="navbar--content contact">Contact Us</div>
+          <div
+            className="navbar--content "
+            onClick={() => {
+              HandleClick("/");
+            }}
+          >
+            About Us
+          </div>
+          <div
+            className="navbar--content pricing"
+            onClick={() => {
+              HandleClick("/services");
+            }}
+          >
+            Services
+          </div>
+          <div
+            className="navbar--content career"
+            onClick={() => {
+              HandleClick("/careers");
+            }}
+          >
+            Careers
+          </div>
+          <div
+            className="navbar--content contact"
+            onClick={() => {
+              HandleClick("/contactUs");
+            }}
+          >
+            Contact Us
+          </div>
         </div>
       </div>
     </div>
