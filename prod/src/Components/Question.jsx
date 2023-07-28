@@ -26,10 +26,8 @@ function Question(props) {
             HandelClick(props.id);
           }}
         >
-          <div className="question--id">01.</div>
-          <div className="question--title">
-            What types of websites do you specialize in creating?
-          </div>
+          <div className="question--id">{props.id}.</div>
+          <div className="question--title">{props.question}</div>
           <div
             className={`show--answer ${CurrentClass ? "show--answered" : ""}`}
           >
@@ -37,10 +35,7 @@ function Question(props) {
           </div>
         </div>
         <div className={`answer ${CurrentClass ? "display--answered" : ""}`}>
-          We specialize in creating a wide range of websites, including
-          portfolio sites, e-commerce platforms, content-rich blogs, corporate
-          websites, and more. Our team works closely with you to customize the
-          site to your specific needs and brand identity.
+          {props.answer}
         </div>
       </div>
       <hr className="split--questions" />

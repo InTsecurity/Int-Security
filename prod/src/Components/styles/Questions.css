@@ -2,38 +2,41 @@
   margin: 30px 60px;
   width: 90%;
   padding: 10px;
-  font-size: 28px;
+  font-size: 1.5em;
   overflow: hidden;
 }
 
 .question--title {
   margin-left: 20px;
-  width: 90%;
+  width: 80%;
+  padding-right: 20px;
+  overflow: visible;
 }
 
 .question--wrapper {
   display: flex;
   cursor: pointer;
-  overflow: hidden;
+  overflow: visible !important;
 }
 
 .show--answer {
   margin-top: -10px;
+  margin-left: -30px;
   font-size: 50px;
   transition: 0.4s;
 }
 
 .answer {
   margin: 20px 30px;
-  font-size: 12px;
-  overflow: hidden;
+  font-size: 6px;
+  overflow: visible;
   opacity: 0;
   transition: font-size 150ms 200ms ease-in, opacity 100ms 200ms ease-in;
 }
 
 .display--answered {
   height: auto;
-  font-size: 24px;
+  font-size: 0.9em;
   opacity: 1;
 }
 

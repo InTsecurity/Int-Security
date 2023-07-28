@@ -3,6 +3,7 @@ import About from "./Components/About";
 import Faq from "./Components/Faq";
 import HeroSection from "./Components/HeroSection";
 import Services from "./Components/Services";
+import "./Styles/main.css";
 
 function Home() {
   return (

@@ -1,5 +1,5 @@
 .hero {
-  padding: 120px 110px;
+  padding: 120px 0px;
 }
 
 .title {
@@ -13,20 +13,9 @@
 }
 
 .title--works {
-  font-size: 24px;
+  font-size: 1.3vw;
   position: relative;
-}
-
-.title--works::before {
-  width: 8px;
-  height: 8px;
-  content: "";
-  display: block;
-  position: absolute;
-  background-color: black;
-  border-radius: 50%;
-  top: 8px;
-  left: -17px;
+  overflow: visible;
 }
 
 .reduce--tm {

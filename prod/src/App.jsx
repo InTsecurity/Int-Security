@@ -27,16 +27,17 @@ function App() {
   Scrollbar.initAll();
   return (
     <div className="app">
-      <NavBar />
       <BrowserRouter>
+        <NavBar />
+
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/services" element={<Services />}></Route>
           <Route path="contactUs" element={<Contactus />}></Route>
           <Route path="careers" element={<Career />}></Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }

@@ -1,9 +1,11 @@
 .headline {
   margin: 100px 120px;
+  width: 90%;
 }
 
 .title2 {
-  font-size: 17em;
+  width: 100%;
+  font-size: 18em;
 }
 
 .lim--width {

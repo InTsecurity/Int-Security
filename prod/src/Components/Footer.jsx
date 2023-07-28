@@ -1,7 +1,12 @@
 import "./styles/Footer.css";
 import logo from "./../assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const navigate = useNavigate();
+  function HandleClick(route) {
+    navigate(route);
+  }
   return (
     <div className="footer">
       <div className="footer--logo">
@@ -12,10 +17,38 @@ function Footer() {
           aria-label="footer--logo"
         ></img>
         <div className="footer--contents">
-          <div className="navbar--details">About</div>
-          <div className="navbar--details">Services</div>
-          <div className="navbar--details">Careers</div>
-          <div className="navbar--details">Contact us</div>
+          <div
+            className="navbar--details"
+            onClick={() => {
+              HandleClick("/");
+            }}
+          >
+            About
+          </div>
+          <div
+            className="navbar--details"
+            onClick={() => {
+              HandleClick("/services");
+            }}
+          >
+            Services
+          </div>
+          <div
+            className="navbar--details"
+            onClick={() => {
+              HandleClick("/careers");
+            }}
+          >
+            Careers
+          </div>
+          <div
+            className="navbar--details"
+            onClick={() => {
+              HandleClick("/contactUs");
+            }}
+          >
+            Contact us
+          </div>
         </div>
         <hr className="footer--hr" />
         <div className="footer--socials">

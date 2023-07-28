@@ -24,6 +24,7 @@
   padding: 0px 8px;
   filter: invert(1);
   scale: 0.9;
+  cursor: pointer;
 }
 
 .product {
