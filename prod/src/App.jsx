@@ -8,6 +8,7 @@ import Career from "./Pages/Career/Career";
 import Scrollbar from "smooth-scrollbar";
 import OverscrollPlugin from "smooth-scrollbar/plugins/overscroll";
 import Services from "./Pages/Services/Services";
+import Videos from "./Pages/Videos/Videos";
 
 function App() {
   const overscrollPluginOptions = {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/services" element={<Services />}></Route>
           <Route path="contactUs" element={<Contactus />}></Route>
           <Route path="careers" element={<Career />}></Route>
+          <Route path="/video" element={<Videos />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
