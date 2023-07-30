@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import "./styles/NavBar.css";
 import { useNavigate } from "react-router-dom";
 
@@ -8,6 +9,7 @@ function NavBar() {
   }
   return (
     <div>
+      <Hamburger />
       <div className="navbar">
         <div className="logo">InTSecurity</div>
         <div className="theme">{<LightThemeSVG />}</div>
@@ -44,6 +46,83 @@ function NavBar() {
           >
             Contact Us
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Hamburger() {
+  const navigate = useNavigate();
+  function HandleClick(route) {
+    navigate(route);
+    HandleClickHamburger();
+  }
+  const navbar = useRef();
+  const bar1 = useRef();
+  const bar2 = useRef();
+  const bar3 = useRef();
+  const HandleClickHamburger = () => {
+    if (navbar.current.style.width === "100vw") {
+      navbar.current.style.width = "0px";
+      bar1.current.style.rotate = "0deg";
+      bar3.current.style.rotate = "0deg";
+      bar1.current.style.margin = "0px 0px 0px 7px";
+      bar3.current.style.margin = "17px 0px 0px 7px";
+      bar2.current.style.opacity = 1;
+      bar3.current.style.background = "black";
+      bar1.current.style.background = "black";
+    } else {
+      navbar.current.style.width = "100vw";
+      bar1.current.style.rotate = "45deg";
+      bar1.current.style.background = "white";
+      bar3.current.style.background = "white";
+
+      bar3.current.style.rotate = "-45deg";
+      bar3.current.style.margin = "10px 0px 0px 7px";
+      bar1.current.style.margin = "10px 0px 0px 7px";
+      bar2.current.style.opacity = 0;
+    }
+  };
+  return (
+    <div className="h--nav">
+      <div className="hamburger" onClick={HandleClickHamburger}>
+        <div className="bar bar1" ref={bar1}></div>
+        <div className="bar bar2" ref={bar2}></div>
+        <div className="bar bar3" ref={bar3}></div>
+      </div>
+      <div className="h--fullnav" ref={navbar}>
+        <div
+          className="navbar--content  h--nav--vontent"
+          onClick={() => {
+            HandleClick("/");
+          }}
+        >
+          About Us
+        </div>
+        <div
+          className="navbar--content pricing h--nav--vontent"
+          onClick={() => {
+            HandleClick("/services");
+          }}
+        >
+          Services
+        </div>
+        <div
+          className="navbar--content career h--nav--vontent"
+          onClick={() => {
+            HandleClick("/careers");
+          }}
+        >
+          Careers
+        </div>
+        <div
+          className="navbar--content contact h--nav--vontent"
+          onClick={() => {
+            HandleClick("/contactUs");
+          }}
+        >
+          Contact Us
         </div>
       </div>
     </div>
