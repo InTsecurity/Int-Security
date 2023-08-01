@@ -3,7 +3,7 @@
 }
 
 .title--dis {
-  font-size: 24px;
+  font-size: 1.6vw;
   margin: 0px 70px;
 }
 
@@ -14,4 +14,30 @@
 
 .title--btn {
   margin: 50px 0px;
+}
+
+@media (max-width: 1100px) {
+  .title--dis {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 740px) {
+  .title--dis {
+    font-size: 3.5vw;
+    margin: 0px 30px;
+  }
+  .career--head {
+    margin: 50px 40px;
+  }
+  .title--btn .main--btn {
+    font-size: 15px;
+    height: 45px;
+  }
+  .title--btn .main--btn::after {
+    margin-top: -15px;
+  }
+  .title--btn {
+    overflow: hidden;
+  }
 }

@@ -26,7 +26,6 @@
 }
 
 .more--info {
-  /* height: 0px; */
   opacity: 0;
   font-size: 2px;
   width: 60%;
@@ -36,7 +35,15 @@
 }
 
 .more--info--display {
-  /* height: auto; */
   opacity: 1;
   font-size: 22px;
+}
+
+@media (max-width: 730px) {
+  .pos--location {
+    display: none;
+  }
+  .pos--element {
+    width: 50%;
+  }
 }

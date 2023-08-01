@@ -11,7 +11,6 @@ function Home() {
       <HeroSection />
       <About />
       <Services />
-      <OurWorks />
       <Faq />
     </div>
   );
