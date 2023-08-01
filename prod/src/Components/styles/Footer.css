@@ -19,7 +19,7 @@
   display: flex;
   overflow: hidden;
   justify-content: space-evenly;
-  width: 40%;
+  width: 50vw;
   margin: 40px auto;
 }
 
@@ -39,8 +39,8 @@
 }
 
 .github {
-  margin-top: 8px;
-  padding: 0px 10px;
+  margin-top: 3px;
+  padding: 8px 10px;
 }
 .instagram {
   margin-left: -5px;
@@ -70,4 +70,26 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   rotate: 360deg;
   border-radius: 10px;
+}
+
+@media (max-width: 915px) {
+  .footer--contents {
+    width: 100vw;
+  }
+  .footer--hr {
+    width: 90%;
+  }
+  .footer--socials {
+    width: 60%;
+  }
+}
+
+@media (max-width: 490px) {
+  .footer--contents {
+    flex-direction: column;
+    margin: 20px auto;
+    margin-bottom: 40px;
+  }
+  .navbar--details {
+  }
 }

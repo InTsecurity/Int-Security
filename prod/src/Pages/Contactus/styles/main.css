@@ -1,11 +1,13 @@
 .contactus {
   padding: 130px 0px;
+  position: relative;
+  z-index: 1;
 }
 .contactus--form {
   margin: 0px auto;
   font-size: 25px;
   padding-bottom: 80px;
-  width: 60%;
+  width: 70%;
   background-color: #ffffff;
   border: 0px;
   color: #2a2a2a;
@@ -160,4 +162,26 @@ input[type="number"] {
   width: 70%;
   margin: 50px auto;
   text-align: center;
+}
+
+@media (max-width: 720px) {
+  .contactus--form {
+    width: 90%;
+    font-size: 20px;
+  }
+  .circularoverflows {
+    display: none;
+  }
+  .contactus--content {
+    padding: 40px;
+  }
+  .cus--name {
+    font-size: 20px;
+  }
+  .fname {
+    font-size: 18px;
+  }
+  .serviceSelect {
+    font-size: 18px;
+  }
 }
