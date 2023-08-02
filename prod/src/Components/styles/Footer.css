@@ -74,7 +74,7 @@
 
 @media (max-width: 915px) {
   .footer--contents {
-    width: 100vw;
+    width: auto;
   }
   .footer--hr {
     width: 90%;
@@ -91,5 +91,6 @@
     margin-bottom: 40px;
   }
   .navbar--details {
+    font-size: 20px;
   }
 }

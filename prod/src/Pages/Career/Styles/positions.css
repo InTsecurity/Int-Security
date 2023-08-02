@@ -45,5 +45,18 @@
   }
   .pos--element {
     width: 50%;
+    padding: 15px;
+  }
+  .newpos {
+    font-size: 19px;
+  }
+  .pos--element .button {
+    scale: 0.8;
+  }
+  .more--info--display {
+    font-size: 18px;
+  }
+  .more--info {
+    width: 70%;
   }
 }
