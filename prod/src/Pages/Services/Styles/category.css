@@ -1,5 +1,5 @@
 .category {
-  margin: 40px 180px;
+  margin: 40px 7vw;
   font-size: 28px;
   width: 80%;
   padding-bottom: 40px;
@@ -21,9 +21,10 @@
   background-color: black;
   border-radius: 50%;
   z-index: 4;
-  padding: 0px 8px;
+  padding: 0px 10px;
   filter: invert(1);
   scale: 0.9;
+  width: 20px;
   cursor: pointer;
 }
 
@@ -41,4 +42,35 @@
   display: flex;
   justify-content: center;
   margin: 80px;
+}
+
+.apply {
+  overflow: visible;
+}
+
+@media (max-width: 620px) {
+  .category {
+    font-size: 20px;
+    width: 90%;
+  }
+  .checkbox {
+    padding: 8px 10px;
+    height: 24px;
+    overflow: hidden;
+  }
+  .product--dis {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .category {
+    margin: 40px 2vw;
+  }
+  .product--dis {
+    font-size: 16px;
+  }
+  .apply {
+    scale: 0.8;
+  }
 }

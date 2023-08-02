@@ -41,3 +41,16 @@
     overflow: hidden;
   }
 }
+
+@media (max-width: 415px) {
+  .career--head {
+    margin: 50px 10px;
+  }
+  .title--dis {
+    margin: 0px 15px;
+  }
+  .button {
+    scale: 0.8;
+    margin-left: -20px;
+  }
+}

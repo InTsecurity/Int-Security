@@ -180,6 +180,7 @@ input[type="number"] {
   }
   .fname {
     font-size: 18px;
+    width: 130%;
   }
   .serviceSelect {
     font-size: 18px;
