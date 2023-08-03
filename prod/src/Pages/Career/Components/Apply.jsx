@@ -1,8 +1,15 @@
 import "./../Styles/Apply.css";
 import "./../../Contactus/styles/main.css";
 import Button from "./../../../Components/Button";
+import { useState } from "react";
 
 function Apply() {
+  const [Details, setDetails] = useState({
+    Username: "",
+    phoneNO: "",
+    email: "",
+    position: "",
+  });
   return (
     <div className="applyform" id="form">
       <div className="services--title af--title--main">
@@ -23,7 +30,13 @@ function Apply() {
                 className="af--name"
                 placeholder="John Walker"
                 required
-                value=""
+                onChange={(e) => {
+                  setDetails((prev) => ({
+                    ...prev,
+                    Username: e.target.value,
+                  }));
+                }}
+                value={Details.Username}
               />
             </div>
             <div className="block block2">
@@ -33,7 +46,13 @@ function Apply() {
                 className="af--name"
                 placeholder="0000000000"
                 required
-                value=""
+                onChange={(e) => {
+                  setDetails((prev) => ({
+                    ...prev,
+                    phoneNO: e.target.value,
+                  }));
+                }}
+                value={Details.phoneNO}
               />
             </div>
           </div>
@@ -44,7 +63,13 @@ function Apply() {
               type="email"
               className="af--email af--name"
               required
-              value=""
+              onChange={(e) => {
+                setDetails((prev) => ({
+                  ...prev,
+                  email: e.target.value,
+                }));
+              }}
+              value={Details.email}
               placeholder="john@intsecurity.com"
             />
           </div>
@@ -55,7 +80,13 @@ function Apply() {
               type="email"
               className="af--email af--name"
               required
-              value=""
+              onChange={(e) => {
+                setDetails((prev) => ({
+                  ...prev,
+                  position: e.target.value,
+                }));
+              }}
+              value={Details.position}
               placeholder="SDE-II"
             />
           </div>
