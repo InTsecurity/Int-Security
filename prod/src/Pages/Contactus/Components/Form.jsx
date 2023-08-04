@@ -11,7 +11,6 @@ function ContactUsForm(props) {
     country: "",
     org: "",
     orgWeb: "https://",
-    plan: "EssentialGuard",
     others: "",
   });
 
@@ -187,30 +186,6 @@ function ContactUsForm(props) {
             }
           }}
         ></input>
-      </div>
-      <div className="service">
-        <label htmlFor="serviceSelectLabel">
-          Select the plan you are intrested in:
-        </label>
-        <select
-          name="serviceSelect"
-          className="serviceSelect"
-          value={Details.plan}
-          onChange={(e) =>
-            setDetails((prevstate) => ({
-              ...prevstate,
-              plan: e.target.value,
-            }))
-          }
-        >
-          <option value="EssentialGuard">EssentialGuard</option>
-          <option className="serviceOption" value="FoundationalShield">
-            FoundationalShield
-          </option>
-          <option className="serviceOption" value="CoreSecure">
-            CoreSecure
-          </option>
-        </select>
       </div>
 
       <div className="service">

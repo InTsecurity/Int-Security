@@ -22,6 +22,11 @@ function Contactus() {
             we're here to assist you. Reach out to us for prompt and
             personalized support. Let's connect and make your website dreams a
             reality!"
+            <br />
+            <br />
+            <br />
+            *WE RECOMMEND YOU TO CHECK OUT OUR SERVICES TAB BEFORE YOU CONTACT
+            US*
           </div>
           {success}
         </div>
