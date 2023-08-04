@@ -1,8 +1,25 @@
 import { useState } from "react";
 import Button from "../../../Components/Button";
+import { Job } from "../Jobs/Jobs";
+
 import "./../Styles/positions.css";
 
 function Positions() {
+  const jobs = Job.map((e) => {
+    return (
+      <NewPosition
+        id={e.id}
+        title={e.title}
+        location={e.location}
+        type={e.type}
+        description={e.description}
+        requirements={e.requirements}
+        responsibility={e.responsibility}
+        key={e.title}
+        apply={<Button title="More Details" />}
+      />
+    );
+  });
   return (
     <div className="positions">
       <div className="main">
@@ -15,27 +32,7 @@ function Positions() {
             apply={"More details"}
           />
         </div>
-        <NewPosition
-          id="1"
-          title="Full-Stack Developer"
-          location="Remote"
-          type="Part-Time"
-          apply={<Button title="More details" />}
-        />
-        <NewPosition
-          id="2"
-          title="Full-Stack Developer"
-          location="Remote"
-          type="Part-Time"
-          apply={<Button title="More details" />}
-        />
-        <NewPosition
-          id="3"
-          title="Full-Stack Developer"
-          location="Remote"
-          type="Part-Time"
-          apply={<Button title="More details" />}
-        />
+        {jobs}
       </div>
     </div>
   );
@@ -73,44 +70,22 @@ function NewPosition(props) {
           isSame ? "more--info more--info--display" : "more--info"
         }`}
       >
-        Job Description: We are seeking a highly motivated and skilled [Job
-        Title] to join our dynamic team. The ideal candidate will be responsible
-        for [brief description of the role's main responsibilities]. If you are
-        passionate about [industry or specific domain], have a keen eye for
-        detail, and thrive in a collaborative environment, we'd love to hear
-        from you. <br />
+        <div
+          className="description"
+          dangerouslySetInnerHTML={{ __html: props.description }}
+        ></div>
         <br />
-        Requirements: Educational Qualifications: Bachelor's degree in [relevant
-        field], or equivalent practical experience. Experience: Minimum of [X]
-        years of experience in [relevant field or industry]. Experience in
-        [specific tools, software, or methodologies] is a plus. Technical
-        Skills: Proficiency in [required programming languages or technologies].
-        Familiarity with [specific software or tools] and the ability to learn
-        new technologies quickly. Strong understanding of [specific domain
-        knowledge]. Analytical and Problem-Solving Abilities: Excellent
-        analytical skills with the ability to identify, troubleshoot, and
-        resolve complex issues efficiently. Proven track record of approaching
-        challenges with innovative and creative problem-solving techniques.
+        <div
+          className="of-d requirements"
+          dangerouslySetInnerHTML={{ __html: props.requirements }}
+        ></div>
         <br />
-        <br />
-        Communication and Collaboration: Strong verbal and written communication
-        skills with the ability to effectively convey technical concepts to both
-        technical and non-technical stakeholders. Demonstrated ability to work
-        collaboratively in a team-oriented environment. Attention to Detail:
-        Meticulous attention to detail and commitment to delivering high-quality
-        work. <br />
-        <br />
-        Time Management: Strong organizational and time management skills to
-        handle multiple tasks and meet tight deadlines. Adaptability: Ability to
-        adapt quickly to changing priorities and project requirements.
-        Self-Motivated: Proactive and self-driven, with the ability to work
-        independently and take ownership of tasks. Industry Knowledge:
-        Up-to-date knowledge of industry trends, best practices, and emerging
-        technologies. Additional Information: This position may require
-        occasional travel. [Any specific working conditions or benefits
-        associated with the role]. <br />
-        <br />
+        <div
+          className="of-d responsibilty"
+          dangerouslySetInnerHTML={{ __html: props.responsibility }}
+        ></div>
       </div>
+      <br />
       <hr className="newpos" />
     </>
   );

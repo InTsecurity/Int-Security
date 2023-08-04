@@ -39,6 +39,14 @@
   font-size: 22px;
 }
 
+ul {
+  list-style-type: disc;
+}
+
+li {
+  overflow: visible;
+}
+
 @media (max-width: 730px) {
   .pos--location {
     display: none;

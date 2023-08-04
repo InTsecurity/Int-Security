@@ -1,18 +1,30 @@
-import { useRef, useState } from "react";
-
 import "./../Styles/category.css";
 
 function Category(props) {
   const data = props.categories;
   const services = data.map((e) => {
-    return <Product title={e} key={e} productTitle={props.title} />;
+    return (
+      <Product
+        title={e}
+        key={e}
+        productTitle={props.title}
+        selectedService={props.selectedService}
+        setselectedService={props.setselectedService}
+      />
+    );
   });
   return (
     <div className="category">
       <div className="category--title">
         <div className="ct--title">{props.title}</div>
         <div className="apply">
-          <CheckBox service={props.title} isHead={true} categories={data} />
+          <CheckBox
+            service={props.title}
+            isHead={true}
+            categories={data}
+            selectedService={props.selectedService}
+            setselectedService={props.setselectedService}
+          />
         </div>
       </div>
       {services}
@@ -20,90 +32,93 @@ function Category(props) {
   );
 }
 
-function Product({ title, productTitle }) {
+function Product({ title, productTitle, selectedService, setselectedService }) {
   return (
     <div className="product ">
       <div className="product--dis ct--title">{title}</div>
       <div className="apply">
-        <CheckBox service={title} isHeasd={false} productTitle={productTitle} />
+        <CheckBox
+          service={title}
+          isHeasd={false}
+          productTitle={productTitle}
+          selectedService={selectedService}
+          setselectedService={setselectedService}
+        />
       </div>
     </div>
   );
 }
 
-function CheckBox({ service, isHead, productTitle, categories }) {
-  let Checkbox = useRef();
-
-  const [selectedService, setselectedService] = useState([
-    {
-      title: "Devlopment",
-      Devlopment: false,
-      services: {
-        "UI, UX Design": false,
-        "Frontend Devlopment": false,
-        "Backend Devlopment": false,
-        "Fullstack Devlopment": false,
-      },
-    },
-    {
-      title: "Deployment",
-      Deployment: false,
-      services: {
-        "Local Deployment": false,
-        "AWS Deployment": false,
-        "Google Cloud Deployment": false,
-        "Other Cloud Delpoyment": false,
-      },
-    },
-    {
-      title: "Security",
-      Security: false,
-      services: {
-        "Red Team Service": false,
-        "Blue Team Service": false,
-        "Managed Bug bounty Platform": false,
-      },
-    },
-  ]);
-
-  function HandleClick(ser, isHead, productTitle, categories) {
-    const temp = selectedService;
-    console.log(ser);
-    temp.map((e) => {
+function CheckBox({
+  service,
+  isHead,
+  productTitle,
+  categories,
+  setselectedService,
+  selectedService,
+}) {
+  function HandleClick(serviceName, isHead, productTitle) {
+    const updatedSelectedService = selectedService.map((category) => {
       if (isHead) {
-        if (e.title === ser) {
-          if (e.ser) {
-            e[ser] = false;
-            document.getElementById(ser).style.backgroundColor = "black";
-            categories.map((t) => {
-              e.services[t] = false;
-              document.getElementById(t).style.backgroundColor = "black";
-            });
-          } else {
-            e[ser] = true;
-            document.getElementById(ser).style.backgroundColor = "white";
-            categories.map((t) => {
-              e.services[t] = true;
-              document.getElementById(t).style.backgroundColor = "white";
-            });
+        if (category.title === serviceName) {
+          const newHeadState = !category[serviceName];
+
+          Object.keys(category.services).forEach((subcategory) => {
+            category.services[subcategory] = newHeadState;
+            const subcategoryElement = document.getElementById(subcategory);
+            if (subcategoryElement) {
+              subcategoryElement.style.backgroundColor = newHeadState
+                ? "white"
+                : "black";
+            }
+          });
+
+          const categoryElement = document.getElementById(serviceName);
+          if (categoryElement) {
+            categoryElement.style.backgroundColor = newHeadState
+              ? "white"
+              : "black";
           }
+
+          return {
+            ...category,
+            [serviceName]: newHeadState,
+            services: { ...category.services },
+          };
         }
       } else {
-        if (e.title === productTitle) {
-          if (e.services.ser) {
-            // uncheck
-            e.services[ser] = false;
-            document.getElementById(ser).style.backgroundColor = "black";
-          } else {
-            // check
-            e.services[ser] = true;
-            document.getElementById(ser).style.backgroundColor = "white";
+        if (category.title === productTitle) {
+          const newSubcategoryState = !category.services[serviceName];
+          category.services[serviceName] = newSubcategoryState;
+
+          const allSubcategoriesSelected = Object.values(
+            category.services
+          ).every((subcategory) => subcategory);
+
+          const categoryElement = document.getElementById(productTitle);
+          if (categoryElement) {
+            categoryElement.style.backgroundColor = allSubcategoriesSelected
+              ? "white"
+              : "black";
           }
+
+          const subcategoryElement = document.getElementById(serviceName);
+          if (subcategoryElement) {
+            subcategoryElement.style.backgroundColor = newSubcategoryState
+              ? "white"
+              : "black";
+          }
+
+          return {
+            ...category,
+            [productTitle]: allSubcategoriesSelected,
+          };
         }
       }
+      return category;
     });
-    setselectedService(temp);
-    console.log(temp);
+
+    setselectedService(updatedSelectedService);
   }
 
   return (
@@ -113,7 +128,6 @@ function CheckBox({ service, isHead, productTitle, categories }) {
       onClick={(e) => {
         HandleClick(service, isHead, productTitle, categories);
       }}
-      ref={Checkbox}
     >
       <svg
         fill="#000000"
