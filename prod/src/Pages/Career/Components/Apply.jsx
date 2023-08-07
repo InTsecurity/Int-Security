@@ -10,6 +10,25 @@ function Apply() {
     email: "",
     position: "",
   });
+
+  const [File, setFile] = useState({ selectedFile: null });
+
+  const OnFileChange = (event) => {
+    setFile({ selectedFile: event.target.files[0] });
+  };
+
+  const fileName = () => {
+    if (File.selectedFile) {
+      if (File.selectedFile.name.length > 25) {
+        const shortedName = File.selectedFile.name.slice(0, 25) + "...";
+        return <>{shortedName}</>;
+      }
+      return <>{File.selectedFile.name}</>;
+    } else {
+      return <>Upload file</>;
+    }
+  };
+
   return (
     <div className="applyform" id="form">
       <div className="services--title af--title--main">
@@ -93,9 +112,16 @@ function Apply() {
           <div className="single--level mt60">
             <div className="af--inputBox">
               <label htmlFor="resume" className="custom-file-upload">
-                Upload resume
+                {fileName()}
               </label>
-              <input type="file" id="resume" className="resume" />
+              <input
+                type="file"
+                onChange={(Event) => {
+                  OnFileChange(Event);
+                }}
+                id="resume"
+                className="resume"
+              />
             </div>
             <Button title="Send" />
           </div>
