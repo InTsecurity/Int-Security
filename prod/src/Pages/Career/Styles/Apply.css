@@ -131,3 +131,8 @@ input[type="file"] {
     padding: 15px;
   }
 }
+
+.error {
+  padding: 10px 20px;
+  color: red;
+}
