@@ -13,6 +13,10 @@ function Apply() {
 
   const [File, setFile] = useState({ selectedFile: null });
 
+  const [isSubmited, setisSubmited] = useState(false);
+
+  const [errorMessage, seterrorMessage] = useState("");
+
   const OnFileChange = (event) => {
     setFile({ selectedFile: event.target.files[0] });
   };
@@ -25,9 +29,35 @@ function Apply() {
       }
       return <>{File.selectedFile.name}</>;
     } else {
-      return <>Upload file</>;
+      return <>Upload Resume</>;
     }
   };
+
+  async function SendData() {
+    const MergedData = {
+      UserDetails: Details,
+      FileDetails: File,
+    };
+
+    if (!File.selectedFile) {
+      seterrorMessage("Please Select resume file!");
+      return 0;
+    }
+
+    if (!isSubmited) {
+      // setisSubmited(true);
+      const data = fetch(
+        "http://localhost:9000/.netlify/functions/app/jobs/apply",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(data);
+    }
+  }
 
   return (
     <div className="applyform" id="form">
@@ -40,7 +70,12 @@ function Apply() {
       </div>
       <div className="apply--form">
         <div className="af--title">Contact us!</div>
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            SendData();
+          }}
+        >
           <div className="single--level">
             <div className="block">
               <label>Your name:</label>
@@ -96,7 +131,7 @@ function Apply() {
             <label htmlFor="af--email">Position:</label>
 
             <input
-              type="email"
+              type="text"
               className="af--email af--name"
               required
               onChange={(e) => {
@@ -123,9 +158,10 @@ function Apply() {
                 className="resume"
               />
             </div>
-            <Button title="Send" />
+            <Button title={`${isSubmited ? "Checkng" : "Submit"}`} />
           </div>
         </form>
+        <div className="error">{errorMessage}</div>
       </div>
     </div>
   );
