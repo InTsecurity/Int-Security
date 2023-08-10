@@ -1,6 +1,7 @@
 import "./../Styles/Apply.css";
 import "./../../Contactus/styles/main.css";
 import Button from "./../../../Components/Button";
+import axios from "axios";
 import { useState } from "react";
 
 function Apply() {
@@ -39,6 +40,7 @@ function Apply() {
       FileDetails: File,
     };
 
+    console.log(MergedData);
     if (!File.selectedFile) {
       seterrorMessage("Please Select resume file!");
       return 0;
@@ -46,16 +48,19 @@ function Apply() {
 
     if (!isSubmited) {
       // setisSubmited(true);
-      const data = fetch(
-        "http://localhost:9000/.netlify/functions/app/jobs/apply",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      console.log(data);
+      await axios
+        .post(
+          "http://localhost:9000/.netlify/functions/app/jobs/apply",
+          MergedData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
+        .then((e) => {
+          console.log(e);
+        });
     }
   }
 
@@ -151,6 +156,7 @@ function Apply() {
               </label>
               <input
                 type="file"
+                accept=".pdf"
                 onChange={(Event) => {
                   OnFileChange(Event);
                 }}
