@@ -1,4 +1,6 @@
-const { Client, Account, ID, Databases } = require("appwrite");
+const { Client, ID, Databases, Storage } = require("appwrite");
+const fs = require("fs");
+const path = require("path");
 const CheckErrors = require("./../Validators/CheckErrors");
 const ERRORS = require("./../errors/errorMessages.js");
 
@@ -8,48 +10,40 @@ const storage = new Storage(client);
 
 client
   .setEndpoint("https://cloud.appwrite.io/v1")
-  .setProject([process.env.PROJECT_ID]);
+  .setProject(process.env.PROJECT_ID);
 
 function apply(req, res) {
   const body = req.body;
+  const uploadedFile = req.file;
+  console.log(uploadedFile);
 
-  // CHECK ERRORS
+  const targetDir = path.join(__dirname, "../resume");
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+  }
+
+  const targetFilePath = path.join(targetDir, uploadedFile.originalname);
+
+  fs.writeFileSync(targetFilePath, uploadedFile.buffer);
+
   const isError = CheckErrors(body);
   if (isError.status) {
     res.json(isError.ErrorInformation);
   }
 
-  // NO ERRORS FOUND TRY TO UPLOAD THE FILE
   // try {
-  //   writeFile("temp/resume.pdf", data).then(() => {
-  //     const file = InputFile.fromPath("temp/resume.pdf", "resume.pdf");
-  //     console.log(file);
-  // const promise = storage.createFile(
-  //   process.env.JOBS_BUCKET_ID,
-  //   ID.unique(),
-  //   document.getElementById("uploader").files[0]
-  // );
+  //   const promise = storage.createFile(
+  //     process.env.JOBS_BUCKET_ID,
+  //     ID.unique(),
+  //     fs.createReadStream(tempFilePath)
+  //   );
+  //   promise.then((e) => {
+  //     console.log(e);
   //   });
-  // } catch {
-  //   res.json(ERRORS.GENERAL_ERROR);
+  // } catch (err) {
+  //   res.json({ Error: ERRORS.GENERAL_ERROR, main: err });
   // }
-  // Upload Resume
-
-  // const promise = databases.createDocument(
-  //   process.env.FORMS_DATABASE_ID,
-  //   process.env.JOBS_COLLECTION_ID,
-  //   ID.unique(),
-  //   {
-  //     name: body.name,
-  //     phone: body.phone,
-  //     email: body.email,
-  //     position: body.position,
-  //   }
-  // );
-
-  res.json({
-    message: "OK",
-  });
+  res.json({ Error: ERRORS.GENERAL_ERROR });
 }
 
 module.exports = apply;

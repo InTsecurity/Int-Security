@@ -7,9 +7,9 @@ const jobsRouter = require("./Routes/jobs");
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:5173/",
-  credentials: true,
+  origin: "http://localhost:5173",
 };
+
 app.use(cors(corsOptions));
 
 require("dotenv").config();
