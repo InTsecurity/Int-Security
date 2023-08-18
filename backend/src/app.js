@@ -3,6 +3,7 @@ const serverless = require("serverless-http");
 const cors = require("cors");
 const contactRouter = require("./Routes/contact");
 const jobsRouter = require("./Routes/jobs");
+const mailRouter = require("./Routes/mail");
 
 const app = express();
 
@@ -16,5 +17,6 @@ require("dotenv").config();
 
 app.use("/.netlify/functions/app/contact", contactRouter);
 app.use("/.netlify/functions/app/jobs", jobsRouter);
+app.use("/.netlify/functions/app/", mailRouter);
 
 module.exports.handler = serverless(app);

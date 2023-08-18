@@ -45,23 +45,24 @@ function Apply() {
       seterrorMessage("Please Select resume file!");
       return 0;
     }
+    seterrorMessage("Sorry, we have no positions to apply!");
 
-    if (!isSubmited) {
-      // setisSubmited(true);
-      await axios
-        .post(
-          "http://localhost:9000/.netlify/functions/app/jobs/apply",
-          MergedData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        )
-        .then((e) => {
-          console.log(e);
-        });
-    }
+    // if (!isSubmited) {
+    //   // setisSubmited(true);
+    //   await axios
+    //     .post(
+    //       "http://localhost:9000/.netlify/functions/app/jobs/",
+    //       MergedData,
+    //       {
+    //         headers: {
+    //           "Content-Type": "multipart/form-data",
+    //         },
+    //       }
+    //     )
+    //     .then((e) => {
+    //       console.log(e);
+    //     });
+    // }
   }
 
   return (

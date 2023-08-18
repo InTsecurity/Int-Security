@@ -1,7 +1,10 @@
 import Button from "../../../Components/Button";
+import { Job } from "../Jobs/Jobs";
 import "./../Styles/head.css";
 
 function Head() {
+  const AvailableJobs = Job.length;
+  let title = `Open Positions(${AvailableJobs})`;
   return (
     <div className="career--head">
       <div className="title">Careers</div>
@@ -12,7 +15,7 @@ function Head() {
         on the lookout for talented individuals to join us on our journey to
         empower startups and fortify the digital landscape.
         <div className="title--btn">
-          <Button title="Open positions (3)" />
+          <Button title={title} />
         </div>
       </div>
     </div>

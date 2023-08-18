@@ -5,7 +5,7 @@ import { Job } from "../Jobs/Jobs";
 import "./../Styles/positions.css";
 
 function Positions() {
-  const jobs = Job.map((e) => {
+  let jobs = Job.map((e) => {
     return (
       <NewPosition
         id={e.id}
@@ -20,6 +20,11 @@ function Positions() {
       />
     );
   });
+
+  if (Job.length === 0) {
+    jobs = <div className="center">No positions currently available</div>;
+  }
+
   return (
     <div className="positions">
       <div className="main">
