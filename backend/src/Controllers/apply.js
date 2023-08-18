@@ -1,8 +1,6 @@
 const { Client, ID, Databases } = require("appwrite");
-const path = require("path");
 const CheckErrors = require("./../Validators/CheckErrors");
 const ERRORS = require("./../errors/errorMessages.js");
-const { clear } = require("console");
 
 // Appwrite database
 
@@ -11,7 +9,7 @@ client
   .setEndpoint("https://cloud.appwrite.io/v1")
   .setProject(process.env.PROJECT_ID);
 
-// Firebase
+
 
 // Middleware function
 
