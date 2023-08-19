@@ -1,8 +1,8 @@
 const express = require("express");
-const apply = require("./../Controllers/apply.js");
+const handlePost = require("./../Controllers/mail.js");
 
 const jobsRouter = express.Router();
 
-jobsRouter.post("/apply", upload.single("FileDetails[selectedFile]"), apply);
+jobsRouter.post("/apply", handlePost);
 
 module.exports = jobsRouter;
