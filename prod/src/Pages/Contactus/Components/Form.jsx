@@ -52,10 +52,23 @@ function ContactUsForm(props) {
       onSubmit={(e) => {
         e.preventDefault();
         if (!isSubmitted) {
-          //   SubmitDetails(Details, setisSubmitted, props.setsuccess);
-          // Submit form
+          // setisSubmitted(true);
+          const stringify = JSON.stringify(Details);
+          const res = fetch(
+            "http://localhost:9000/.netlify/functions/app/contact/new",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+              },
+              body: stringify,
+            }
+          );
 
-          setisSubmitted(true);
+          res.then((e) => {
+            console.log(e);
+            setisSubmitted(false);
+          });
         }
       }}
     >
