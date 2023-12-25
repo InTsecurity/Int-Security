@@ -12,7 +12,7 @@ function NavBar() {
       <Hamburger />
       <div className="navbar">
         <div className="logo">InTSecurity</div>
-        <div className="theme">{<LightThemeSVG />}</div>
+        {/* <div className="theme">{<LightThemeSVG />}</div> */}
         <div className="contents">
           <div
             className="navbar--content "
@@ -30,14 +30,14 @@ function NavBar() {
           >
             Services
           </div>
-          <div
+          {/* <div
             className="navbar--content career"
             onClick={() => {
               HandleClick("/careers");
             }}
           >
             Careers
-          </div>
+          </div> */}
           <div
             className="navbar--content contact"
             onClick={() => {

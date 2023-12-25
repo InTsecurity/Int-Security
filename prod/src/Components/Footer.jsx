@@ -150,7 +150,7 @@ function Footer() {
       </div>
       <div className="footer--copyright">
         &#169;2023 INT{"{SECURITY}"} | All rights Reserved | Made with &#10084;
-        by Team InTSecurity
+        by Team InTSecurity | Terms and Conditions
       </div>
       <div className="website--version">v1.0.0</div>
     </div>
