@@ -33,14 +33,14 @@ function Footer() {
           >
             Services
           </div>
-          <div
+          {/* <div
             className="navbar--details"
             onClick={() => {
               HandleClick("/careers");
             }}
           >
             Careers
-          </div>
+          </div> */}
           <div
             className="navbar--details"
             onClick={() => {
