@@ -33,7 +33,7 @@ const dataSchema = new mongoose.Schema({
     type: String,
   },
   services: {
-    type: String,
+    type: Array,
   },
 });
 
